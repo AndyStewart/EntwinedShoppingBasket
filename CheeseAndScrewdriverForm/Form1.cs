@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CheeseAndScrewdriverForm
 {
     public partial class Form1 : Form
     {
-        private readonly ShoppingCart shoppingCart;
+        private readonly ShoppingCart _shoppingCart;
 
         public Form1()
         {
             InitializeComponent();
-            shoppingCart = new ShoppingCart(this);
+            _shoppingCart = new ShoppingCart(this);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,26 +32,27 @@ namespace CheeseAndScrewdriverForm
 
             public ShoppingCart(Form1 form1)
             {
-                this._form1 = form1;
-                this._form1.button1.Click += (sender, args) => CalculateTotal();
-                this._form1.button2.Click += (sender, args) => AddCheese();
-                this._form1.button3.Click += (sender, args) => AddScrewdriver();
+                _form1 = form1;
+                _form1.button2.Click += AddCheeseAndDisplay;
+                _form1.button3.Click += AddScrewDriverAndUpdate;
             }
 
-            private void CalculateTotal()
+            private void AddScrewDriverAndUpdate(object sender, EventArgs args)
             {
-                this._form1.textBox3.Text = _products.Sum(q => q.PriceDecimal).ToString();
+                _products.Add(new Screwdriver(decimal.Parse(_form1.textBox2.Text)));
+                _form1.textBox3.Text = _products.Sum(q => q.PriceDecimal).ToString();
             }
 
-            private void AddCheese()
+            private void AddCheeseAndDisplay(object sender, EventArgs args)
             {
-                this._products.Add(new Cheese(decimal.Parse(_form1.textBox1.Text), _form1.textBox4.Text));
+                _products.Add(new Cheese(decimal.Parse(_form1.textBox1.Text), _form1.textBox4.Text));
+                _form1.textBox3.Text = _products.Sum(q => q.PriceDecimal).ToString();
             }
+        }
 
-            private void AddScrewdriver()
-            {
-                this._products.Add(new Screwdriver(decimal.Parse(_form1.textBox2.Text)));
-            }
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -64,7 +60,7 @@ namespace CheeseAndScrewdriverForm
     {
         public Screwdriver(decimal parse)
         {
-            this.PriceDecimal = parse;
+            PriceDecimal = parse;
         }
 
         public decimal PriceDecimal { get; set; }
