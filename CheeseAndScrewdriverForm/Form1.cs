@@ -30,45 +30,33 @@ namespace CheeseAndScrewdriverForm
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox3.Text = shoppingCart.CalculateTotal().ToString();
-        }
-
         private class ShoppingCart
         {
-            private readonly Form1 form1;
+            private readonly Form1 _form1;
             private readonly List<IProduct> _products = new List<IProduct>();
 
             public ShoppingCart(Form1 form1)
             {
-                this.form1 = form1;
+                this._form1 = form1;
+                this._form1.button1.Click += (sender, args) => CalculateTotal();
+                this._form1.button2.Click += (sender, args) => AddCheese();
+                this._form1.button3.Click += (sender, args) => AddScrewdriver();
             }
 
-            public decimal CalculateTotal()
+            private void CalculateTotal()
             {
-                return _products.Sum(q => q.PriceDecimal);
+                this._form1.textBox3.Text = _products.Sum(q => q.PriceDecimal).ToString();
             }
 
-            public void AddCheese()
+            private void AddCheese()
             {
-                this._products.Add(new Cheese(decimal.Parse(form1.textBox1.Text), form1.textBox4.Text));
+                this._products.Add(new Cheese(decimal.Parse(_form1.textBox1.Text), _form1.textBox4.Text));
             }
 
-            public void AddScrewdriver()
+            private void AddScrewdriver()
             {
-                this._products.Add(new Screwdriver(decimal.Parse(form1.textBox2.Text)));
+                this._products.Add(new Screwdriver(decimal.Parse(_form1.textBox2.Text)));
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            shoppingCart.AddCheese();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            shoppingCart.AddScrewdriver();
         }
     }
 
