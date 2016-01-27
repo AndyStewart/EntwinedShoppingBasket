@@ -1,0 +1,9 @@
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\bin\Debug\CheeseAndScrewdriverForm.exe.config
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\bin\Debug\CheeseAndScrewdriverForm.exe
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\bin\Debug\CheeseAndScrewdriverForm.pdb
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.csprojResolveAssemblyReference.cache
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.Form1.resources
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.Properties.Resources.resources
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.csproj.GenerateResource.Cache
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.exe
+c:\users\vagrant\documents\visual studio 2015\Projects\CheeseAndScrewdriverForm\CheeseAndScrewdriverForm\obj\Debug\CheeseAndScrewdriverForm.pdb
